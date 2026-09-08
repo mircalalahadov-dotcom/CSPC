@@ -37,3 +37,4 @@ def test_matches_law():
     expected = N0 * np.exp(-lam * dt * steps)
 
     assert average == pytest.approx(expected, rel=0.05)
+    
