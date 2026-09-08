@@ -45,3 +45,4 @@ Conclusion
 The experiment demonstrates that vectorisation with NumPy can provide a very large performance improvement compared with iterating over individual atoms using a pure-Python loop.
 
 The tests also confirm that the simulation produces results consistent with the expected radioactive decay law.
+
