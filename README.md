@@ -1,39 +1,31 @@
-# CSPC — Practical Work 1
+# CSPC - Computer Science for Physics and Chemistry
 
-#Lab A — Reproducible Foundations: Environment, Git & GitHub
+My coursework repository. Each practical is under PW<n>/Lab <X>/.
 
-#Environment
-The project was developed using:
-Python 3.11
-NumPy
-pytest
-Git
-Conda
+## Setup
 
-The Conda environment is defined in `PW1/Lab A/environment.yml`.
-
-### Testing
-
-The radioactive decay simulation was tested using:
-
-```bash
+Create the Conda environment:
+conda env create -f PW1/Lab\ A/environment.yml
+Activate the environment:
+conda activate cspc
+Run the tests:
 pytest -v
 
-All three tests passed successfully.
+## PW1 - Lab A: Reproducible Foundations
 
-The tests verify:
-the simulation starts with N0 atoms;
-The Python loop implementation was compared with the vectorised NumPy implementation using speed.py.
+**What I built:**
 
-Implementation	Time:
-Python loop	1.5707 s
-NumPy	0.0002 s
+Set up a reproducible Conda environment with Python 3.11, NumPy, pytest and Git and created speed.py to compare the Python loop with NumPy.
 
-The measured speed-up was:
-7918.37× faster with NumPy.
+**Speed comparison (loop vs NumPy):**
 
-Conclusion:
+loop: 1.5707 s
+numpy: 0.0002 s
+speed-up: 7918.37x faster
 
-1.The experiment shows that vectorisation with NumPy can provide a very large performance improvement compared with iterating over individual atoms using a pure-Python loop.
-2.Test also confirms that the simulation produces results consistent with the expected radioactive decay law.
+**Tests:**yes all 3 tests passed successfully.
+
+**Conclusion:**
+I understood how to work with git better  and also proved for myself the theory(as it was expected numpy is the way faster 
+than loop). The tests showed that the simulation works correctly and it gives the expected decay results.
 
