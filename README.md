@@ -19,9 +19,9 @@ Set up a reproducible Conda environment with Python 3.11, NumPy, pytest and Git 
 
 **Speed comparison (loop vs NumPy):**
 
-loop: 1.5707 s
-numpy: 0.0002 s
-speed-up: 7918.37x faster
+*loop: 1.5707 s
+*numpy: 0.0002 s
+*speed-up: 7918.37x faster
 
 **Tests:**yes all 3 tests passed successfully.
 
