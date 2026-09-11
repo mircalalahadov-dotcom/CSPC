@@ -23,10 +23,6 @@ All three tests passed successfully.
 
 The tests verify:
 the simulation starts with N0 atoms;
-negative decay rates are rejected;
-the simulation agrees with the analytical exponential decay law within the required tolerance.
-Performance Comparison
-
 The Python loop implementation was compared with the vectorised NumPy implementation using speed.py.
 
 Implementation	Time:
