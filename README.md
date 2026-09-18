@@ -29,3 +29,11 @@ Set up a reproducible Conda environment with Python 3.11, NumPy, pytest and Git 
 I understood how to work with git better  and also proved for myself the theory(as it was expected numpy is the way faster 
 than loop). The tests showed that the simulation works correctly and it gives the expected decay results.
 
+
+## PW1 — Lab B
+
+The observed decay data showed a clear decreasing trend over time. The overall shape was broadly consistent with the analytical exponential decay law using λ = 0.3.
+
+The plotting script reads `decay_observed.csv`, calculates the analytical decay, and generates a side-by-side comparison plot.
+
+Snakemake automates the workflow: it uses `decay_observed.csv` as input and runs `plot.py` to generate `figure.png`. If the output is already up to date, Snakemake does not rebuild it.
