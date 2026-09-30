@@ -32,3 +32,30 @@ axes[2].set_xlabel("Time (s)")
 
 plt.tight_layout()
 plt.savefig("motion.png")
+
+trajectory = np.loadtxt("trajectory.csv", delimiter=",", skiprows=1)
+
+t_traj = trajectory[:, 0]
+x = trajectory[:, 1]
+y_traj = trajectory[:, 2]
+
+vx = np.gradient(x, t_traj)
+vy = np.gradient(y_traj, t_traj)
+
+speed = np.sqrt(vx**2 + vy**2)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y_traj)
+plt.xlabel("x (m)")
+plt.ylabel("y (m)")
+plt.title("Trajectory")
+plt.tight_layout()
+plt.savefig("trajectory.png")
+
+plt.figure(figsize=(8, 6))
+plt.plot(t_traj, speed)
+plt.xlabel("Time (s)")
+plt.ylabel("Speed (m/s)")
+plt.title("Speed vs Time")
+plt.tight_layout()
+plt.savefig("speed.png")
