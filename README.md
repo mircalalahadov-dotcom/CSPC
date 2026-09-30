@@ -37,3 +37,10 @@ The observed decay data showed a clear decreasing trend over time. The overall s
 The plotting script reads `decay_observed.csv`, calculates the analytical decay, and generates a side-by-side comparison plot.
 
 Snakemake automates the workflow: it uses `decay_observed.csv` as input and runs `plot.py` to generate `figure.png`. If the output is already up to date, Snakemake does not rebuild it.
+
+## PW2 --- Lab A
+
+- Mean acceleration: -8.58 m/s²
+- Standard deviation of acceleration: 28.72 m/s²
+- Differentiation amplifies measurement noise, and the second derivative amplifies it further, making acceleration much noisier than position.
+- After integrating acceleration to velocity and then position, the maximum difference between recovered and original position was 0.785 m.
