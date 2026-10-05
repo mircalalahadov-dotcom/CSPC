@@ -44,3 +44,46 @@ Snakemake automates the workflow: it uses `decay_observed.csv` as input and runs
 - Standard deviation of acceleration: 28.72 m/s²
 - Differentiation amplifies measurement noise, and the second derivative amplifies it further, making acceleration much noisier than position.
 - After integrating acceleration to velocity and then position, the maximum difference between recovered and original position was 0.785 m.
+## PW2 --- Lab B
+
+### Part 2 — Optimization methods
+
+For the simple convex function in Part 2A, all three methods agreed and reached the global minimum at x ≈ 3.
+
+For the harder function in Part 2B, the methods did not always agree. Starting from x0 = 0, Newton's method converged to a maximum at x ≈ 0.170 because g''(x) < 0, while gradient descent and SLSQP found the minimum near x ≈ -1.301. Starting from x0 = 2, Newton and gradient descent found the minimum near x ≈ 1.131, while SLSQP found the other minimum near x ≈ -1.301.
+
+This shows that the starting point and optimization method can affect the result on a complicated optimization landscape.
+
+### Part 3 — Reaction kinetics
+
+The first-order reaction rate constant was fitted by minimizing the total squared error using SLSQP.
+
+- Fitted rate constant: k = 0.26176
+- Expected value: approximately 0.25
+
+The fitted value is close to the expected value. The measured data and fitted exponential curve are saved in `kinetics.png`.
+
+### Part 4 — Chemical equilibrium
+
+For the reaction H2 + I2 <=> 2 HI with K = 15.6:
+
+- Newton equilibrium extent: x = 0.6638477
+- SLSQP equilibrium extent: x = 0.6638474
+- Difference between methods: approximately 2.39e-7
+
+Equilibrium amounts:
+
+- H2 = 0.33615 mol
+- I2 = 0.33615 mol
+- HI = 1.32770 mol
+
+The equilibrium plot is saved in `equilibrium.png`.
+
+### Part 5 — Titration bonus
+
+The equivalence point was found by calculating the numerical slope of the pH curve and locating its maximum.
+
+- Equivalence point: 50.0 mL
+- Maximum slope: 4.0
+
+The titration curve and slope plot are saved in `titration.png`.
