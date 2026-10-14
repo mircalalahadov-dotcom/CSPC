@@ -87,3 +87,51 @@ The equivalence point was found by calculating the numerical slope of the pH cur
 - Maximum slope: 4.0
 
 The titration curve and slope plot are saved in `titration.png`.
+
+# Practical Work 3 (PW3) — Statistical Analysis & Causal Inference Report
+
+**Course:** Computer Science for Physics and Chemistry  
+**Author:** Mirjalal Ahadov  
+**Repository:** CSPC / PW3  
+
+---
+
+## Part 1: UCI Cleveland Heart Disease Analysis
+
+### Task 1: Data Characterization & Quality
+* **Source:** Cleveland Heart Disease dataset (`processed.cleveland.data`), 303 observations, 14 attributes.
+* **Continuous Variables:** `age`, `chol` (serum cholesterol), `trestbps` (resting blood pressure), `thalach` (maximum heart rate).
+* **Missing Values:** Missing attributes in `ca` and `thal` were loaded cleanly without affecting continuous distribution analysis.
+
+### Task 2 & 3: Visual Inspection & Normality Assessment
+* **Distributions (`distributions.png`):**
+  * `age`: Symmetric, unimodal bell-curve centered around ~54–58 years.
+  * `thalach`: Roughly symmetric distribution peaking near 150–160 bpm.
+  * `chol` & `trestbps`: Right-skewed distributions with prominent high-value tails (`chol` > 500 mg/dl).
+* **Shapiro-Wilk Normality Tests:**
+  * `age`: $p \approx 0.006$
+  * `thalach`: $p \approx 7.0 \times 10^{-5}$
+  * `chol`: $p \approx 5.9 \times 10^{-9}$
+  * `trestbps`: $p \approx 1.8 \times 10^{-6}$
+  * **Conclusion:** All continuous variables reject strict mathematical normality ($p < 0.05$) due to real-world skewness and sample size sensitivity.
+
+### Task 4: Group Comparison — Maximum Heart Rate (`thalach_comparison.png`)
+* **Hypothesis:** Patients with heart disease have lower exercise-induced maximum heart rate.
+* **Results:**
+  * Healthy group (`target = 0`): $158.38 \pm 1.50$ bpm
+  * Diseased group (`target = 1`): $139.26 \pm 1.92$ bpm
+* **Significance:** Non-parametric Mann-Whitney U test gave $U = 16989.5$, $p \approx 1.86 \times 10^{-13}$. The difference is highly statistically significant.
+
+### Task 5: Correlation Analysis — Age vs. Thalach (`age_thalach_scatter.png`)
+* **Pearson Correlation:** $r = -0.3938$, $p = 1.11 \times 10^{-12}$.
+* **Interpretation:** Moderate, statistically significant negative linear relationship, reflecting physiological aging.
+
+---
+
+## Part 2: The Chemical-Exposure Mystery (`chemicals_cancer.csv`)
+
+### Task 6: Naive Analysis (Correlation without Controls)
+* **Dataset:** 1000 synthetic patient observations measuring chemical exposures and tumour malignancy.
+* **Direct Pearson Correlations with Malignancy:**
+  * Cadmium: $r \approx 0.8800$ ($p \approx 0$) — *Appears strongly associated*
+  * Pollution Index: $r \approx 0.8951$ —
